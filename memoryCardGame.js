@@ -48,13 +48,16 @@ const cardGenerator = () => {
 		card.classList = "card";
 		face.classList = "face";
 		back.classList = "back";
+		// Attach the info the cards
+		face.src = item.imgSrc;
 		// Attach the card to the section
 		section.appendChild(card);
 		card.appendChild(face);
 		card.appendChild(back);
-		// Attach the info the cards
-		face.src = item.imgSrc;
 
+		card.addEventListener('click', (e) => {
+			card.classList.toggle('toggleCard');
+		});
     });
 };
 
