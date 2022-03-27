@@ -10,6 +10,7 @@ const playerLives = 10;
 playerLivesCount.textContent = playerLives;
 
 // We generate the object
+/* Función que retorna un array cuyos elementos son un conjunto de objetos los cuales almacenan datos de las imágenes */
 const getData = () => [
 	{ imgSrc: "./images/beatles.jpeg", name: "beatles" },
 	{ imgSrc: "./images/blink182.jpeg", name: "blink 182" },
@@ -57,8 +58,15 @@ const cardGenerator = () => {
 
 		card.addEventListener('click', (e) => {
 			card.classList.toggle('toggleCard');
+			checkCards(e);
 		});
     });
+};
+
+// Check Cards
+const checkCards = (e) => {
+	const clickedCard = e.target;
+	console.log(clickedCard);
 };
 
 // Card Generator Function
